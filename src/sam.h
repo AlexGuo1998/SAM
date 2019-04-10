@@ -10,7 +10,7 @@ void EnableSingmode();
 
 int SAMMain();
 
-char* GetBuffer();
+char *GetBuffer();
 int GetBufferLength();
 
 

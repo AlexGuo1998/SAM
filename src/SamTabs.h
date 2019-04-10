@@ -2,13 +2,12 @@
 #define SAMTABS_H
 
 //tab40672
-unsigned char stressInputTable[] =
-{
+unsigned char stressInputTable[] = {
 	'*', '1', '2', '3', '4', '5', '6', '7', '8'
 };
 
 //tab40682
-unsigned char signInputTable1[]={
+unsigned char signInputTable1[] = {
 	' ', '.', '?', ',', '-', 'I', 'I', 'E',
 	'A', 'A', 'A', 'A', 'U', 'A', 'I', 'E',
 	'U', 'O', 'R', 'L', 'W', 'Y', 'W', 'R',
@@ -23,8 +22,7 @@ unsigned char signInputTable1[]={
 };
 
 //tab40763
-unsigned char signInputTable2[] =
-{
+unsigned char signInputTable2[] = {
 	'*', '*', '*', '*', '*', 'Y', 'H', 'H',
 	'E', 'A', 'H', 'O', 'H', 'X', 'X', 'R',
 	'X', 'H', 'X', 'X', 'X', 'X', 'H', '*',
@@ -38,25 +36,25 @@ unsigned char signInputTable2[] =
 	'N'
 };
 
-//loc_9F8C 
+//loc_9F8C
 enum {
-    FLAG_PLOSIVE  = 0x0001,
-    FLAG_STOPCONS = 0x0002, /* stop consonant */
-    FLAG_VOICED   = 0x0004,
-    /* 0x08 */
-    FLAG_DIPTHONG = 0x0010,
-    FLAG_DIP_YX   = 0x0020, /* dipthong ending with YX */
-    FLAG_CONSONANT= 0x0040,
-    FLAG_VOWEL    = 0x0080,
-    FLAG_PUNCT    = 0x0100,
-    /* 0x200 */
-    FLAG_ALVEOLAR = 0x0400,
-    FLAG_NASAL    = 0x0800,
-    FLAG_LIQUIC   = 0x1000,  /* liquic consonant */
-    FLAG_FRICATIVE= 0x2000
+	FLAG_PLOSIVE  = 0x0001,
+	FLAG_STOPCONS = 0x0002, /* stop consonant */
+	FLAG_VOICED   = 0x0004,
+	/* 0x08 */
+	FLAG_DIPTHONG = 0x0010,
+	FLAG_DIP_YX   = 0x0020, /* dipthong ending with YX */
+	FLAG_CONSONANT= 0x0040,
+	FLAG_VOWEL    = 0x0080,
+	FLAG_PUNCT    = 0x0100,
+	/* 0x200 */
+	FLAG_ALVEOLAR = 0x0400,
+	FLAG_NASAL    = 0x0800,
+	FLAG_LIQUIC   = 0x1000,  /* liquic consonant */
+	FLAG_FRICATIVE= 0x2000
 };
 
-unsigned short flags[]={
+unsigned short flags[] = {
 	0x8000 , 0xC100 , 0xC100 , 0xC100 , 0xC100 , 0x00A4 , 0x00A4 , 0x00A4 ,
 	0x00A4 , 0x00A4 , 0x00A4 , 0x0084 , 0x0084 , 0x00A4 , 0x00A4 , 0x0084 ,
 	0x0084 , 0x0084 , 0x0084 , 0x0084 , 0x0084 , 0x0084 , 0x0044 , 0x1044 ,
@@ -74,8 +72,7 @@ unsigned short flags[]={
 
 
 //tab45616???
-unsigned char phonemeStressedLengthTable[] = 
-{
+unsigned char phonemeStressedLengthTable[] = {
 	0x00 , 0x12 , 0x12 , 0x12 , 8 ,0xB , 9 ,0xB ,
 	0xE ,0xF ,0xB , 0x10 ,0xC , 6 , 6 ,0xE ,
 	0xC ,0xE ,0xC ,0xB , 8 , 8 ,0xB ,0xA ,
@@ -85,12 +82,11 @@ unsigned char phonemeStressedLengthTable[] =
 	0xE ,0xF ,0xF ,0xF ,0xE ,0xE , 8 , 2 ,
 	2 , 7 , 2 , 1 , 7 , 2 , 2 , 7 ,
 	2 , 2 , 8 , 2 , 2 , 6 , 2 , 2 ,
-	7 , 2 , 4 , 7 , 1 , 4 , 5 , 5     
+	7 , 2 , 4 , 7 , 1 , 4 , 5 , 5
 };
 
 //tab45536???
-unsigned char phonemeLengthTable[] = 
-{
+unsigned char phonemeLengthTable[] = {
 	0 , 0x12 , 0x12 , 0x12 , 8 , 8 , 8 , 8 ,
 	8 ,0xB , 6 ,0xC ,0xA , 5 , 5 ,0xB ,
 	0xA ,0xA ,0xA , 9 , 8 , 7 , 9 , 7 ,
