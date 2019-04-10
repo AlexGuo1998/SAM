@@ -10,7 +10,8 @@ void PrintOutput(
 	unsigned char *a1,
 	unsigned char *a2,
 	unsigned char *a3,
-	unsigned char *p);
+	unsigned char *p,
+	unsigned char t);
 
 void PrintRule(unsigned short offset);
 

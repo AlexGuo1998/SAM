@@ -283,7 +283,7 @@ void Render() {
 	RescaleAmplitude();
 
 	if (debug) {
-		PrintOutput(sampledConsonantFlag, frequency1, frequency2, frequency3, amplitude1, amplitude2, amplitude3, pitches);
+		PrintOutput(sampledConsonantFlag, frequency1, frequency2, frequency3, amplitude1, amplitude2, amplitude3, pitches, t);
 	}
 
 	ProcessFrames(t);
