@@ -1,9 +1,13 @@
 #ifndef RECITER_C
 #define RECITER_C
 
-//int TextToPhonemes(unsigned char *input, unsigned char *output);
+#include <stdint.h>
 
-int TextToPhonemes(unsigned char *input);
+//fix some possible issue in original algorithm, not compatible
+#define FIX_BUGS 0
+
+//return output length
+uint8_t TextToPhonemes(const char *input, char *output, uint8_t outsize);
 
 #endif
 

@@ -73,7 +73,6 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
     </ClCompile>
     <Link>
@@ -87,7 +86,6 @@
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -109,9 +107,7 @@
   <ItemGroup>
     <ClInclude Include="src\debug.h" />
     <ClInclude Include="src\reciter.h" />
-    <ClInclude Include="src\ReciterTabs.h" />
     <ClInclude Include="src\render.h" />
-    <ClInclude Include="src\RenderTabs.h" />
     <ClInclude Include="src\sam.h" />
     <ClInclude Include="src\SamTabs.h" />
   </ItemGroup>

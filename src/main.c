@@ -186,7 +186,7 @@ int main(int argc, char **argv) {
 			} else if (strcmp(&argv[i][1], "phonetic") == 0) {
 				phonetic = 1;
 			} else if (strcmp(&argv[i][1], "debug") == 0) {
-				debug = 1;
+				debug += 1;
 			} else if (strcmp(&argv[i][1], "pitch") == 0) {
 				SetPitch((unsigned char)min(atoi(argv[i + 1]), 255));
 				i++;
@@ -211,22 +211,18 @@ int main(int argc, char **argv) {
 	for (i = 0; input[i] != 0; i++)
 		input[i] = (unsigned char)toupper((int)input[i]);
 
-	if (debug) {
-		if (phonetic) printf("phonetic input: %s\n", input);
-		else printf("text input: %s\n", input);
-	}
+	if (debug && !phonetic) printf("text input: %s\n", input);
 
 	if (!phonetic) {
-		strcat_s((char*)input, 256, "[");
-		if (!TextToPhonemes(input)) return 1;
-		if (debug) {
-			char *end = strchr(input, '\x9b');
-			if (end - input < 255)
-				*(end + 1) = '\0';
-			printf("phonetic input: %s\n", input);
-		}
-	} else 
-		strcat_s((char*)input, 256, "\x9b");
+		char phonetic[255];
+		memmove(input + 1, input, 255);
+		input[0] = ' ';
+		if (255 == TextToPhonemes(input, phonetic, 255)) return 1;
+		strcpy_s(input, 256, phonetic);
+	}
+
+	if (debug) printf("phonetic input: %s\n", input);
+	strcat_s((char*)input, 256, "\x9b");
 
 #ifdef USESDL
 	if (SDL_Init(SDL_INIT_AUDIO) < 0) {

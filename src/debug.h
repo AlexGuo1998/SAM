@@ -13,6 +13,4 @@ void PrintOutput(
 	unsigned char *p,
 	unsigned char t);
 
-void PrintRule(unsigned short offset);
-
 #endif

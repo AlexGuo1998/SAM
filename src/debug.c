@@ -49,17 +49,3 @@ void PrintOutput(
 	printf("===========================================\n");
 
 }
-
-extern unsigned char GetRuleByte(unsigned short mem62, unsigned char Y);
-
-void PrintRule(unsigned short offset) {
-	unsigned char i = 1;
-	unsigned char A = 0;
-	printf("Applying rule: ");
-	do {
-		A = GetRuleByte(offset, i);
-		if ((A & 127) == '=') printf(" -> "); else printf("%c", A & 127);
-		i++;
-	} while ((A & 128) == 0);
-	printf("\n");
-}

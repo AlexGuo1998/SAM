@@ -44,13 +44,7 @@
     <ClInclude Include="src\reciter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\ReciterTabs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\render.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="src\RenderTabs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="src\sam.h">
