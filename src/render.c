@@ -6,7 +6,11 @@
 #include "RenderTabs.h"
 
 #include "debug.h"
+
+//use preprocessor debug if defined
+#ifndef debug
 extern int debug;
+#endif // !debug
 
 //extern unsigned char A, X, Y;
 //extern unsigned char mem44;

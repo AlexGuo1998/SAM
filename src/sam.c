@@ -23,7 +23,10 @@ unsigned char mouth = 128;
 unsigned char throat = 128;
 int singmode = 0;
 
+//use preprocessor debug if defined
+#ifndef debug
 extern int debug;
+#endif // !debug
 
 unsigned char stress[256]; //numbers from 0 to 8
 unsigned char phonemeLength[256]; //tab40160

@@ -13,7 +13,10 @@
 
 #endif // _DEBUG
 
+//use preprocessor debug if defined
+#ifndef debug
 extern int debug;
+#endif // !debug
 
 enum flag {
 	f_number    = 0x01,

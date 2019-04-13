@@ -12,6 +12,11 @@
 #include <SDL_audio.h>
 #endif
 
+//use preprocessor debug if defined
+#ifndef debug
+#define USE_CMDLINE_DEBUG
+int debug = 0;
+#endif // !debug
 
 // Approximations of some Windows functions to ease portability
 #if defined __GNU_LIBRARY__ || defined __GLIBC__
@@ -72,7 +77,10 @@ void PrintUsage() {
 	printf("        -mouth number           set mouth value (default=128)\n");
 	printf("        -wav filename           output to wav instead of libsdl\n");
 	printf("        -sing                   special treatment of pitch\n");
+#ifdef USE_CMDLINE_DEBUG
 	printf("        -debug                  print additional debug messages\n");
+	printf("                                use twice for more\n");
+#endif // USE_CMDLINE_DEBUG
 	printf("\n");
 
 
@@ -156,8 +164,6 @@ void OutputSound() {}
 
 #endif	
 
-int debug = 0;
-
 int main(int argc, char **argv) {
 	int i;
 	int phonetic = 0;
@@ -185,8 +191,10 @@ int main(int argc, char **argv) {
 				EnableSingmode();
 			} else if (strcmp(&argv[i][1], "phonetic") == 0) {
 				phonetic = 1;
+#ifdef USE_CMDLINE_DEBUG
 			} else if (strcmp(&argv[i][1], "debug") == 0) {
 				debug += 1;
+#endif // USE_CMDLINE_DEBUG
 			} else if (strcmp(&argv[i][1], "pitch") == 0) {
 				SetPitch((unsigned char)min(atoi(argv[i + 1]), 255));
 				i++;
