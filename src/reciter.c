@@ -787,11 +787,12 @@ static inline uint8_t matchchar_after(char rulechar, const char *tomatch) {
 			while (char_flags_safe(tomatch[r]) & f_consonant) r++;
 			return r;
 		} else if (rulechar == '%') {
-			//match ELY ER ES ED EFUL ING
-			if (memcmp_1(tomatch, "ELY", 3)) return 3;
+			//match E<break> ER ES ED ELY EFUL ING
+			if (tomatch[0] == 'E' && !(char_flags_safe(tomatch[1]) & f_letter)) return 2;
 			if (memcmp_1(tomatch, "ER", 2)) return 2;
 			if (memcmp_1(tomatch, "ES", 2)) return 2;
 			if (memcmp_1(tomatch, "ED", 2)) return 2;
+			if (memcmp_1(tomatch, "ELY", 3)) return 3;
 			if (memcmp_1(tomatch, "EFUL", 4)) return 4;
 			if (memcmp_1(tomatch, "ING", 3)) return 3;
 #ifdef CHECK_RULE
